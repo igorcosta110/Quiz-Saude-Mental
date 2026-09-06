@@ -103,4 +103,4 @@ export const questoes = [
         alternCorreta: 0,
         explicacao: "Relacionamentos calorosos e saudáveis foram identificados como o fator isolado mais determinante para manter a saúde mental e física ao envelhecer, segundo estudo que acompanhou indivíduos por mais de 80 anos."
     }
-]
+];

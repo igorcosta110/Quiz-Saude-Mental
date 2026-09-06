@@ -94,6 +94,11 @@ export default function Questao({pergunta, imagem, alternativas, alternativaCorr
         <Text style={styles.textoBotao}>{alternativas[3]}</Text>
       </TouchableOpacity>
 
+      {/* Botão 5 */}
+      <TouchableOpacity style={styles.botao} onPress={() => responder(5)}>
+        <Text style={styles.textoBotao}>{alternativas[4]}</Text>
+      </TouchableOpacity>
+
       {/* Modal de Feedback */}
       <Modal visible={modalVisivel} transparent={true} animationType="fade">
         <View style={styles.modalFundo}>

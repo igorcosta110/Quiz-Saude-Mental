@@ -15,7 +15,8 @@ export default function TelaQuestao1({ navigation }) {
                     "Esta á uma alternativa errada",
                     "Esta também é uma alternativa errada",
                     "Fechando a trinca temos mais uma alternativa errada",
-                    "Neste exemplo esta é a alternativa correta"
+                    "Neste exemplo esta é a alternativa correta",
+                    "Alternativa criada"
                 ]
             }
             alternativaCorreta={4}
