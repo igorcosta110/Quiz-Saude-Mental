@@ -21,7 +21,7 @@ export default function TelaQuestao1({ navigation }) {
                     Jogo.pontuacao += pontos;
                     //Aqui neste exemplo, como só temos uma questão, dela estou indo para a tela final. 
                     //Quando você criar novas questões, vá para a Questão 2 e nas questões sempre para a próxima.
-                    navigation.navigate('Questao2');
+                    navigation.navigate('Final');
                 }
             }
         />
