@@ -40,7 +40,7 @@ export const questoes = [
     },  
     {
         id: 4,
-        pergunta: "como uma boa noite de sono ajuda diretamente na saúde mental?",
+        pergunta: "Como uma boa noite de sono ajuda diretamente na saúde mental?",
         alternativas: [
             "Serve apenas para descansar o corpo, sem relação com o nosso humor.",
             "Pode ser substituído por xícaras de café ou um energético durante a semana.",
