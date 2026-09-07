@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { View, Text, Image, TouchableOpacity, Modal, StyleSheet, ScrollView} from "react-native";
 import { Audio } from "expo-av";
 
@@ -68,7 +69,7 @@ export default function Questao({pergunta, imagem, alternativas, alternativaCorr
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView>
         <Image source={imagem} style={styles.imagem} />
         <Text style={styles.pergunta}>{pergunta}</Text>
@@ -112,7 +113,7 @@ export default function Questao({pergunta, imagem, alternativas, alternativaCorr
           </View>
         </Modal>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 

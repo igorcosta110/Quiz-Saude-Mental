@@ -22,7 +22,10 @@ export default function App() {
     //Aqui está sendo criada a estrutura de navegação que será utilizada pela aplicação
     //Cada nova tela que você criar, importe ali na parte de cima e registre aqui embaixo com o Stack.Screen
     <NavigationContainer> 
-      <Stack.Navigator initialRouteName="Inicial">
+      <Stack.Navigator 
+        initialRouteName="Inicial"
+        screenOptions={{headerShown: false}}
+      >
         <Stack.Screen name="Inicial" component={TelaInicial} />
         <Stack.Screen name="Questao1" component={TelaQuestao1} />
         <Stack.Screen name="Questao2" component={TelaQuestao2} />
