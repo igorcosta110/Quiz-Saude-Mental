@@ -121,8 +121,9 @@ export default function Questao({pergunta, imagem, alternativas, alternativaCorr
 const styles = StyleSheet.create({
   container: { 
     flex: 1, 
-    padding: 20, 
-    alignItems: "center" 
+    padding: 10, 
+    alignItems: "center",
+    backgroundColor: '#1C3040',
   },
   imagem: { 
     width: "100%", 
@@ -131,24 +132,28 @@ const styles = StyleSheet.create({
     marginBottom: 20 
   },
   pergunta: {
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: "bold",
     marginBottom: 20,
     textAlign: "center",
+    color: '#fff',
   },
   // Adicionada a cor de fundo cinza padrão diretamente no estilo do botão
   botao: {
     width: "100%",
-    padding: 15,
+    padding: 10,
     marginVertical: 5,
+    borderWidth: 1,
     borderRadius: 8,
-    alignItems: "center",
-    backgroundColor: "#e0e0e0",
+    borderColor: '#000',
+    elevation: 5,
+    alignItems: "text-start",
+    backgroundColor: "#1C3040",
   },
   textoBotao: { 
     fontSize: 16, 
     fontWeight: "bold", 
-    color: "#333" 
+    color: "#fff" 
   },
   modalFundo: {
     flex: 1,
