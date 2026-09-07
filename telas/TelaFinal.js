@@ -2,12 +2,25 @@ import React from 'react';
 import { View, Text, Button, StyleSheet, BackHandler, Platform, Alert, Image, TouchableOpacity } from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
 import { Jogo } from '../Globais';
+import { resultados } from '../data/resultados';
 
 export default function TelaFinal({ navigation }) {
 
     const pontuacaoFinal = Jogo.pontuacao;
+    const listaResultados = resultados;
 
     let arquivoVideo;
+    let respostaFinal;
+
+    if(pontuacaoFinal <= listaResultados[0].acertos){
+        respostaFinal = listaResultados[0]
+    }else if(pontuacaoFinal <= listaResultados[1].acertos){
+        respostaFinal = listaResultados[1]
+    }else if(pontuacaoFinal <= listaResultados[2].acertos){
+        respostaFinal = listaResultados[2]
+    }else if(pontuacaoFinal <= listaResultados[3].acertos){
+        respostaFinal = listaResultados[3]
+    }
 
     // if(pontuacaoFinal === 1) {
     //     arquivoVideo = require('../assets/bonus.mp4');
@@ -28,8 +41,8 @@ export default function TelaFinal({ navigation }) {
             />
 
             <Text style={[styles.texto, styles.textoPontuacao]}>Você acertou: {pontuacaoFinal} de 8</Text>
-            <Text style={[styles.texto, styles.textoPontuacao]}>Subtítulo substituível</Text>
-            <Text style={[styles.texto, styles.textoResultado]}>Este é um texto que vai ser substituído depois</Text>
+            <Text style={[styles.texto, styles.textoPontuacao]}>{respostaFinal.subtitulo}</Text>
+            <Text style={[styles.texto, styles.textoResultado]}>{respostaFinal.resposta}</Text>
 {/* 
             <Video
                 source={arquivoVideo}
