@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Image, TouchableOpacity, Modal, StyleSheet} from "react-native";
+import { View, Text, Image, TouchableOpacity, Modal, StyleSheet, ScrollView} from "react-native";
 import { Audio } from "expo-av";
 
 export default function Questao({pergunta, imagem, alternativas, alternativaCorreta, feedback, onProxima}) {
@@ -69,47 +69,49 @@ export default function Questao({pergunta, imagem, alternativas, alternativaCorr
 
   return (
     <View style={styles.container}>
-      <Image source={imagem} style={styles.imagem} />
-      <Text style={styles.pergunta}>{pergunta}</Text>
+      <ScrollView>
+        <Image source={imagem} style={styles.imagem} />
+        <Text style={styles.pergunta}>{pergunta}</Text>
 
-      {/* BOTÕES FEITOS UM A UM (SEM MAP E SEM MUDANÇA DE COR) */}
+        {/* BOTÕES FEITOS UM A UM (SEM MAP E SEM MUDANÇA DE COR) */}
 
-      {/* Botão 1 */}
-      <TouchableOpacity style={styles.botao} onPress={() => responder(1)}>
-        <Text style={styles.textoBotao}>{alternativas[0]}</Text>
-      </TouchableOpacity>
+        {/* Botão 1 */}
+        <TouchableOpacity style={styles.botao} onPress={() => responder(1)}>
+          <Text style={styles.textoBotao}>{alternativas[0]}</Text>
+        </TouchableOpacity>
 
-      {/* Botão 2 */}
-      <TouchableOpacity style={styles.botao} onPress={() => responder(2)}>
-        <Text style={styles.textoBotao}>{alternativas[1]}</Text>
-      </TouchableOpacity>
+        {/* Botão 2 */}
+        <TouchableOpacity style={styles.botao} onPress={() => responder(2)}>
+          <Text style={styles.textoBotao}>{alternativas[1]}</Text>
+        </TouchableOpacity>
 
-      {/* Botão 3 */}
-      <TouchableOpacity style={styles.botao} onPress={() => responder(3)}>
-        <Text style={styles.textoBotao}>{alternativas[2]}</Text>
-      </TouchableOpacity>
+        {/* Botão 3 */}
+        <TouchableOpacity style={styles.botao} onPress={() => responder(3)}>
+          <Text style={styles.textoBotao}>{alternativas[2]}</Text>
+        </TouchableOpacity>
 
-      {/* Botão 4 */}
-      <TouchableOpacity style={styles.botao} onPress={() => responder(4)}>
-        <Text style={styles.textoBotao}>{alternativas[3]}</Text>
-      </TouchableOpacity>
+        {/* Botão 4 */}
+        <TouchableOpacity style={styles.botao} onPress={() => responder(4)}>
+          <Text style={styles.textoBotao}>{alternativas[3]}</Text>
+        </TouchableOpacity>
 
-      {/* Botão 5 */}
-      <TouchableOpacity style={styles.botao} onPress={() => responder(5)}>
-        <Text style={styles.textoBotao}>{alternativas[4]}</Text>
-      </TouchableOpacity>
+        {/* Botão 5 */}
+        <TouchableOpacity style={styles.botao} onPress={() => responder(5)}>
+          <Text style={styles.textoBotao}>{alternativas[4]}</Text>
+        </TouchableOpacity>
 
-      {/* Modal de Feedback */}
-      <Modal visible={modalVisivel} transparent={true} animationType="fade">
-        <View style={styles.modalFundo}>
-          {/* A cor de fundo aqui é injetada pela nossa variável corFundoModal */}
-          <View style={[styles.modalCaixa, { backgroundColor: corFundoModal }]}>
-            <Text style={styles.modalTitulo}>{tituloDoModal}</Text>
-            <Text style={styles.modalFeedback}>{feedback}</Text>
-            {/* O botão "Próxima" foi removido. A transição ocorre pelo setTimeout. */}
+        {/* Modal de Feedback */}
+        <Modal visible={modalVisivel} transparent={true} animationType="fade">
+          <View style={styles.modalFundo}>
+            {/* A cor de fundo aqui é injetada pela nossa variável corFundoModal */}
+            <View style={[styles.modalCaixa, { backgroundColor: corFundoModal }]}>
+              <Text style={styles.modalTitulo}>{tituloDoModal}</Text>
+              <Text style={styles.modalFeedback}>{feedback}</Text>
+              {/* O botão "Próxima" foi removido. A transição ocorre pelo setTimeout. */}
+            </View>
           </View>
-        </View>
-      </Modal>
+        </Modal>
+      </ScrollView>
     </View>
   );
 }
