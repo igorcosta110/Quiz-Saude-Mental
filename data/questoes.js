@@ -9,7 +9,7 @@ export const questoes = [
             "Uma condição que deve eliminada por completo do cotidiano",
             "Uma resposta puramente física, sem nenhuma ligação com nossos pensamentos ou emoções",
         ],
-        alternCorreta: 2,
+        alternCorreta: 3,
         explicacao: "A ansiedade é uma emoção básica que ajudou a espécie humana a sobreviver a perigos. Ela só passa a ser considerada um problema quando se torna desproporcional, frequente e paralisa a rotina sem que haja um perigo real"
     },
     {
@@ -22,7 +22,7 @@ export const questoes = [
             "A depressão é causada pela genética, enquanto a tristeza é causada por problemas.",
             "A tristeza afeta o corpo, enquanto a depressão afeta a mente",
         ],
-        alternCorreta: 1,
+        alternCorreta: 2,
         explicacao: "Sentir tristeza diante de perdas ou frustrações é saudável e esperado. A depressão é uma condição psiquiátrica caracterizada pela persistência de humor rebaixado, perda de prazer em coisas do dia a dia e alterações no sono, apetite e energia por pelo menos duas semanas seguidas."
     },   
     {
@@ -35,7 +35,7 @@ export const questoes = [
             "Serve apenas para mudar a aparência do corpo, sem nenhum impacto na mente.",
             "Traz benefícios apenas enquanto você está se exercitando, perdendo o efeito logo em seguida.",
         ],
-        alternCorreta: 1,
+        alternCorreta: 2,
         explicacao: "Quando nos motiventamos, o cérebro libera substâncias químicas naturais (como a endorfina e a serotonina) que geram sensação de prazer e relaxamento. Além disso, o exercício ajuda a queimar os hormônios acumulados pelo estresse, trazendo calma e equilíbrio ao longo do dia."
     },  
     {
@@ -48,7 +48,7 @@ export const questoes = [
             "Faz o cérebro desligar por completo, impedindo qualquer atividade mental enquanto dormimos.",
             "Ajuda o cerébro a organizar emoções, processar memórias e reduzir o estresse acumulado.",
         ],
-        alternCorreta: 4,
+        alternCorreta: 5,
         explicacao: "Enquanto dormimos, o cérebro realiza uma espécie de faxina mental: organiza o que aprendemos, processa as emoções vividas no dia e regula os hormônios do estresse. Dormir bem é indispensável para acordar com mais foco, paciência e estabilidade emocional."
     },  
     {
@@ -61,7 +61,7 @@ export const questoes = [
             "Uma alteração hormonal típica dos jovens na fase de estudos.",
             "Uma fobia social que impede o indivíduo de conversar com colegas.",
         ],
-        alternCorreta: 2,
+        alternCorreta: 3,
         explicacao: "O Burnout é caracterizado por três dimensões: sensação de esgotamento de energia, distanciamento mental ou sentimentos de negatividade em relação ao trabalho e redução da eficácia profissional."
     },  
     {
@@ -74,7 +74,7 @@ export const questoes = [
             "Libera descargas imprevisíveis de dopamina, o que estimula a busca compulsiva por novas interações.",
             "Elimina o estresse ao substituir interações humanas reais por virtuais",
         ],
-        alternCorreta: 3,
+        alternCorreta: 4,
         explicacao: "As redes sociais são projetadas com \"recompensas variáveis\" (likes, notificações, novos vídeos), acionando o circuito dopaminérgico do cérebro. Isso cria um ciclo de busca contínua que pode gerar fadiga mental, hiperestimulação e ansiedade."
     },  
     {
@@ -87,7 +87,7 @@ export const questoes = [
             "Dar amor e atenção que a pessoa não recebe de familiares.",
             "Oferecer um espaço seguro para autoconhecimento, organização de pensamentos e desenvolvimento pessoal.",
         ],
-        alternCorreta: 4,
+        alternCorreta: 5,
         explicacao: "A psicoterapia baseia-se em evidências científicas e métodos clínicos. Seu objetivo não é dar respostas prontas, mas capacitar o indivíduo a compreender seus próprios padrões de pensamento e comportamento para desenvolver autonomia."
     },  
     {
@@ -100,7 +100,7 @@ export const questoes = [
             "Nível de renda e patrimônio",
             "Ausência de estresse e problemas na vida",
         ],
-        alternCorreta: 0,
+        alternCorreta: 1,
         explicacao: "Relacionamentos calorosos e saudáveis foram identificados como o fator isolado mais determinante para manter a saúde mental e física ao envelhecer, segundo estudo que acompanhou indivíduos por mais de 80 anos."
     }
 ];
