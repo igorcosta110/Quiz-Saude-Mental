@@ -35,7 +35,7 @@ export const questoes = [
             "Serve apenas para mudar a aparência do corpo, sem nenhum impacto na mente.",
             "Traz benefícios apenas enquanto você está se exercitando, perdendo o efeito logo em seguida.",
         ],
-        alternCorreta: 2,
+        alternCorreta: 1,
         explicacao: "Quando nos motiventamos, o cérebro libera substâncias químicas naturais (como a endorfina e a serotonina) que geram sensação de prazer e relaxamento. Além disso, o exercício ajuda a queimar os hormônios acumulados pelo estresse, trazendo calma e equilíbrio ao longo do dia."
     },  
     {
