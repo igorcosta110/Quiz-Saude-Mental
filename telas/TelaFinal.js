@@ -1,10 +1,13 @@
-import React from 'react';
-import { View, Text, Button, StyleSheet, BackHandler, Platform, Alert, Image, TouchableOpacity } from 'react-native';
+import React, {useRef, useCallback} from 'react';
+import { View, Text, StyleSheet, BackHandler, TouchableOpacity } from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
+import { useIsFocused, useFocusEffect } from '@react-navigation/native';
 import { Jogo } from '../Globais';
 import { resultados } from '../data/resultados';
 
 export default function TelaFinal({ navigation }) {
+    const videoRef = useRef(null);
+    const isFocused = useIsFocused();
 
     const pontuacaoFinal = Jogo.pontuacao;
     const listaResultados = resultados;
@@ -23,6 +26,29 @@ export default function TelaFinal({ navigation }) {
 
     let arquivoVideo = respostaFinal.video;
 
+    useFocusEffect(
+        useCallback( ()=>{
+            return ()=>{
+                if (videoRef.current){
+                    videoRef.current.unloadAsync();
+                }
+            };
+        },[])
+    );
+
+    const reiniciarJogo = async() =>{
+        Jogo.pontuacao = 0;
+        
+        if(videoRef.current){
+            await videoRef.current.unloadAsync();
+        }
+
+        navigation.reset({
+            index: 0,
+            routes: [{name: 'Inicial'}],
+        })
+    };
+
     return(
         //Cria uma tela final simples com um título, a pontuação, um botão para fechar o app
         //e um botão para iniciar novamente (levando à TelaInicial)
@@ -30,9 +56,10 @@ export default function TelaFinal({ navigation }) {
             <Text style={[styles.texto, styles.textoTitulo]}>Saúde mental: o que você sabe sobre o tema?</Text>
 
             <Video 
+                ref={videoRef}
                 source={arquivoVideo} 
                 style={styles.image}
-                shouldPlay={true}
+                shouldPlay={isFocused}
                 isLooping={true}
                 resizeMode={ResizeMode.COVER}
             />
@@ -43,7 +70,7 @@ export default function TelaFinal({ navigation }) {
 
             <View style={styles.containerBotoes}>
                 <TouchableOpacity 
-                    onPress={() => navigation.navigate('Inicial')}
+                    onPress={reiniciarJogo}
                     style={styles.botoes}
                 >
                     <Text style={[styles.textoBotao]}>Jogar novamente</Text>

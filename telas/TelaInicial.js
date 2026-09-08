@@ -7,11 +7,11 @@ export default function TelaInicial({ navigation }) {
 
     //Força que toda vez que a tela for reaberta (mesmo se já tiver sido criada e estiver na pilha)
     // o valor de pontuação é zerado.
-    useFocusEffect(
-        useCallback(() => {
-            Jogo.pontuacao = 0;
-        }, [])
-    );
+    // useFocusEffect(
+    //     useCallback(() => {
+    //         Jogo.pontuacao = 0;
+    //     }, [])
+    // );
 
     return (
         //Cria uma tela simples com um título, uma imagem e um botão que chama a primeira questão
