@@ -9,7 +9,6 @@ export default function TelaFinal({ navigation }) {
     const pontuacaoFinal = Jogo.pontuacao;
     const listaResultados = resultados;
 
-    let arquivoVideo;
     let respostaFinal;
 
     if(pontuacaoFinal <= listaResultados[0].acertos){
@@ -22,12 +21,7 @@ export default function TelaFinal({ navigation }) {
         respostaFinal = listaResultados[3]
     }
 
-    // if(pontuacaoFinal === 1) {
-    //     arquivoVideo = require('../assets/bonus.mp4');
-    // } else {
-    //     arquivoVideo = require('../assets/final.mp4');
-    // }
-
+    let arquivoVideo = respostaFinal.video;
 
     return(
         //Cria uma tela final simples com um título, a pontuação, um botão para fechar o app
@@ -35,22 +29,17 @@ export default function TelaFinal({ navigation }) {
         <View style={styles.container}>
             <Text style={[styles.texto, styles.textoTitulo]}>Saúde mental: o que você sabe sobre o tema?</Text>
 
-            <Image 
-                source={require('../assets/example.jpg')}
+            <Video 
+                source={arquivoVideo} 
                 style={styles.image}
+                shouldPlay={true}
+                isLooping={true}
+                resizeMode={ResizeMode.COVER}
             />
 
             <Text style={[styles.texto, styles.textoPontuacao]}>Você acertou: {pontuacaoFinal} de 8</Text>
             <Text style={[styles.texto, styles.textoPontuacao]}>{respostaFinal.subtitulo}</Text>
             <Text style={[styles.texto, styles.textoResultado]}>{respostaFinal.resposta}</Text>
-{/* 
-            <Video
-                source={arquivoVideo}
-                style={styles.video}
-                shouldPlay={true}
-                isLooping={true}
-                resizeMode={ResizeMode.COVER}
-            /> */}
 
             <View style={styles.containerBotoes}>
                 <TouchableOpacity 
@@ -79,8 +68,6 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        // alignItems: 'center',
-        // justifyContent: 'center',
         backgroundColor: '#1C3040',
         padding: 10,
         paddingTop: 50,
@@ -88,7 +75,7 @@ const styles = StyleSheet.create({
 
     image:{
         width: '100%',
-        height: '300',
+        height: 300,
         borderRadius: 8,
     },
 
