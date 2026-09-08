@@ -11,6 +11,7 @@ export default function TelaQuestao1({ navigation }) {
 
         //Aqui o componente questão está sendo criado e estamos passando as props que o compõe
         <Questao
+            id={questao3.id}
             pergunta= {questao3.pergunta}
             imagem={require('../assets/imgQuestao3.gif')}
             alternativas={questao3.alternativas}

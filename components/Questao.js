@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { View, Text, Image, TouchableOpacity, Modal, StyleSheet, ScrollView} from "react-native";
 import { Audio } from "expo-av";
 
-export default function Questao({pergunta, imagem, alternativas, alternativaCorreta, feedback, onProxima}) {
+export default function Questao({id, pergunta, imagem, alternativas, alternativaCorreta, feedback, onProxima}) {
   const [alternativaUsuario, setAlternativaUsuario] = useState(null);
   const [modalVisivel, setModalVisivel] = useState(false);
 
@@ -71,6 +71,16 @@ export default function Questao({pergunta, imagem, alternativas, alternativaCorr
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
+        <View style={styles.barraSegmentada}>
+          <View style={[styles.elementoBarraSegmentada, id >= 1 ? styles.ativo : styles.inativo]} ></View>
+          <View style={[styles.elementoBarraSegmentada, id >= 2 ? styles.ativo : styles.inativo]} ></View>
+          <View style={[styles.elementoBarraSegmentada, id >= 3 ? styles.ativo : styles.inativo]} ></View>
+          <View style={[styles.elementoBarraSegmentada, id >= 4 ? styles.ativo : styles.inativo]} ></View>
+          <View style={[styles.elementoBarraSegmentada, id >= 5 ? styles.ativo : styles.inativo]} ></View>
+          <View style={[styles.elementoBarraSegmentada, id >= 6 ? styles.ativo : styles.inativo]} ></View>
+          <View style={[styles.elementoBarraSegmentada, id >= 7 ? styles.ativo : styles.inativo]} ></View>
+          <View style={[styles.elementoBarraSegmentada, id >= 8 ? styles.ativo : styles.inativo]} ></View>
+        </View>
         <Image source={imagem} style={styles.imagem} />
         <Text style={styles.pergunta}>{pergunta}</Text>
 
@@ -180,4 +190,23 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     color: "#333",
   },
+  barraSegmentada:{
+    height: 6,
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: 10,
+  },
+  elementoBarraSegmentada:{
+    flex:1,
+    height: '100%',
+    marginHorizontal: 2,
+    borderRadius: 3,
+  },
+  ativo:{
+    backgroundColor: '#01ADF1',
+  },
+  inativo:{
+    backgroundColor: '#334E68',
+  }
 });
